@@ -35,6 +35,9 @@
 .container .menu__button:hover {
   opacity: 0.5;
 }
+.container .modal__menu__container {
+  display: none;
+}
 .container .background {
   position: absolute;
   z-index: -1;
@@ -344,7 +347,14 @@
   gap: 28px;
   background: #ffffff;
 }
-.container .wrapper .main .main__price .main__price__container .main__price__card .main__price__card__text p {
+.container .wrapper .main .main__price .main__price__container .main__price__card .main__price__card__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 27px;
+}
+.container .wrapper .main .main__price .main__price__container .main__price__card .main__price__card__wrapper .main__price__card__text p {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
@@ -353,7 +363,7 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
-.container .wrapper .main .main__price .main__price__container .main__price__card .main__price__card__price p {
+.container .wrapper .main .main__price .main__price__container .main__price__card .main__price__card__wrapper .main__price__card__price p {
   font-family: "Prata";
   font-style: normal;
   font-weight: 400;
@@ -395,6 +405,86 @@
   .container .menu__button {
     margin: 34px 0px 0px 30px;
   }
+  .container .modal__menu__container {
+    transform: translateX(-100%);
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    transition: transform 0.5s;
+  }
+  .container .modal__menu__container .modal__menu__close-btn {
+    position: absolute;
+    right: 0;
+    margin: 10px 10px 0px 0px;
+  }
+  .container .modal__menu__container .modal__menu {
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+  }
+  .container .modal__menu__container .modal__menu .modal__menu__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 30px;
+  }
+  .container .modal__menu__container .modal__menu .modal__menu__content .modal__menu__content__text p {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+    color: #000000;
+  }
+  .container .modal__menu__container .modal__menu .modal__menu__content .modal__menu__content__media {
+    display: flex;
+    justify-content: center;
+    margin-top: 73px;
+    gap: 30px;
+  }
+  .container .modal__menu__container .modal__menu .modal__menu__content .modal__menu__content__media .modal__menu__content__media__image {
+    width: 28px;
+    cursor: pointer;
+    transition: opacity 0.2s ease-out;
+  }
+  .container .modal__menu__container .modal__menu .modal__menu__content .modal__menu__content__media .modal__menu__content__media__image:hover {
+    opacity: 0.5;
+  }
+  .container .modal__menu__container .modal__menu .modal__menu__content .modal__menu__content__button {
+    margin-top: 51px;
+    width: 220px;
+    height: 60px;
+    background-color: #222222;
+    text-align: center;
+    line-height: 60px;
+    cursor: pointer;
+  }
+  .container .modal__menu__container .modal__menu .modal__menu__content .modal__menu__content__button a {
+    text-decoration: none;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+  .container .modal__menu__container .modal__menu .modal__menu__content .modal__menu__content__button:hover {
+    box-sizing: border-box;
+    border: 1px solid #222222;
+    background-color: #f4f4f4;
+    line-height: 58px;
+  }
+  .container .modal__menu__container .modal__menu .modal__menu__content .modal__menu__content__button:hover a {
+    color: #222222;
+  }
+  .container .modal__menu__container.active {
+    transform: translateX(0%);
+  }
   .container .background {
     display: none;
   }
@@ -409,6 +499,9 @@
     width: 100%;
     display: flex;
     justify-content: center;
+  }
+  .container .wrapper .header .header__heading .header__heading__logo img {
+    width: 60px;
   }
   .container .wrapper .header .header__heading .header__heading__media {
     display: none;
@@ -478,6 +571,7 @@
     height: 280px;
   }
   .container .wrapper .main .main__career .main__career__card__container {
+    margin-top: 50px;
     flex-wrap: wrap;
     gap: 60px;
   }
@@ -532,6 +626,9 @@
   .container .wrapper .main .main__feedback__container .main__feedback .main__feedback__card {
     width: 300px;
   }
+  .container .wrapper .main .main__feedback__container .main__feedback .main__feedback__card .main__feedback__card__uphead .main__feedback__card__uphead__photo img {
+    width: 50px;
+  }
   .container .wrapper .main .main__feedback__container .main__feedback .main__feedback__card .main__feedback__card__subhead p {
     font-size: 14px;
     line-height: 22px;
@@ -571,7 +668,7 @@
     margin-top: 31px;
   }
   .container .wrapper .footer {
-    margin-top: 83px;
+    margin-top: 50px;
     flex-direction: column;
     justify-content: center;
     gap: 10px;
@@ -581,5 +678,223 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
+  }
+}
+@media (max-width: 340px) {
+  .container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .container .menu__button {
+    margin: 24px 0px 0px 20px;
+  }
+  .container .wrapper {
+    width: 100%;
+    margin-top: 19px;
+  }
+  .container .wrapper .header {
+    height: 671px;
+  }
+  .container .wrapper .header .header__info {
+    width: 100%;
+    margin-top: 38px;
+  }
+  .container .wrapper .header .header__info .header__info__name {
+    width: 300px;
+    text-align: center;
+  }
+  .container .wrapper .header .header__info .header__info__name .header__info__name__text {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .container .wrapper .header .header__info .header__info__title {
+    margin-top: 12px;
+  }
+  .container .wrapper .header .header__info .header__info__title .header__info__title__text__uphead {
+    letter-spacing: 0.3em;
+    font-size: 30px;
+    line-height: 30px;
+  }
+  .container .wrapper .header .header__info .header__info__title .header__info__title__text__subhead {
+    letter-spacing: 0.3em;
+    font-size: 30px;
+    line-height: 30px;
+  }
+  .container .wrapper .header .header__info .header__info__title .header__info__title__text__subhead span {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .container .wrapper .header .header__info .header__info__about {
+    margin-top: 20px;
+    width: 300px;
+  }
+  .container .wrapper .header .header__info .header__info__about .header__info__about__text {
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .container .wrapper .header .header__info .header__info__button {
+    margin-top: 25px;
+    line-height: 50px;
+    height: 50px;
+  }
+  .container .wrapper .header .header__info .header__info__button a {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .container .wrapper .header .background__media {
+    margin-top: 40px;
+    width: 100%;
+  }
+  .container .wrapper .header .background__media img {
+    width: 100%;
+    height: 320px;
+  }
+  .container .wrapper .main {
+    margin-top: 50px;
+  }
+  .container .wrapper .main .main__title .main__title__text {
+    max-width: 300px;
+  }
+  .container .wrapper .main .main__title .main__title__text p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .container .wrapper .main .main__career {
+    width: 100%;
+    margin-top: 44px;
+  }
+  .container .wrapper .main .main__career .main__career__image img {
+    width: 100%;
+    height: 140px;
+  }
+  .container .wrapper .main .main__career .main__career__card__container {
+    margin-top: 34px;
+    gap: 25px 20px;
+  }
+  .container .wrapper .main .main__career .main__career__card__container .main__career__card {
+    width: 140px;
+  }
+  .container .wrapper .main .main__career .main__career__card__container .main__career__card .main__career__card__digit p {
+    font-size: 34px;
+    line-height: 40px;
+  }
+  .container .wrapper .main .main__career .main__career__card__container .main__career__card .main__career__card__text p {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .container .wrapper .main .main__portfolio {
+    width: 100%;
+    margin-top: 50px;
+  }
+  .container .wrapper .main .main__portfolio .main__portfolio__title p {
+    font-size: 22px;
+    line-height: 32px;
+  }
+  .container .wrapper .main .main__portfolio .main__portfolio__image__container {
+    margin-top: 31px;
+    grid-template-columns: 340px;
+    grid-gap: 2px;
+  }
+  .container .wrapper .main .main__portfolio .main__portfolio__image__container .card-1 img,
+.container .wrapper .main .main__portfolio .main__portfolio__image__container .card-4 img,
+.container .wrapper .main .main__portfolio .main__portfolio__image__container .card-5 img,
+.container .wrapper .main .main__portfolio .main__portfolio__image__container .card-8 img,
+.container .wrapper .main .main__portfolio .main__portfolio__image__container .card-1,
+.container .wrapper .main .main__portfolio .main__portfolio__image__container .card-4,
+.container .wrapper .main .main__portfolio .main__portfolio__image__container .card-5,
+.container .wrapper .main .main__portfolio .main__portfolio__image__container .card-8 {
+    width: 340px;
+    height: 235px;
+  }
+  .container .wrapper .main .main__portfolio .main__portfolio__image__container .card-2 img,
+.container .wrapper .main .main__portfolio .main__portfolio__image__container .card-3 img,
+.container .wrapper .main .main__portfolio .main__portfolio__image__container .card-6 img,
+.container .wrapper .main .main__portfolio .main__portfolio__image__container .card-7 img,
+.container .wrapper .main .main__portfolio .main__portfolio__image__container .card-2,
+.container .wrapper .main .main__portfolio .main__portfolio__image__container .card-3,
+.container .wrapper .main .main__portfolio .main__portfolio__image__container .card-6,
+.container .wrapper .main .main__portfolio .main__portfolio__image__container .card-7 {
+    width: 340px;
+    height: 360px;
+  }
+  .container .wrapper .main .main__portfolio .main__portfolio__image__container .main__portfolio__image__card:nth-of-type(3),
+.container .wrapper .main .main__portfolio .main__portfolio__image__container .main__portfolio__image__card:nth-of-type(7) {
+    margin-top: 0px;
+  }
+  .container .wrapper .main .main__feedback__container {
+    width: 100%;
+    margin-top: 50px;
+  }
+  .container .wrapper .main .main__feedback__container .main__feedback__title p {
+    font-size: 22px;
+    line-height: 32px;
+  }
+  .container .wrapper .main .main__feedback__container .main__feedback {
+    width: 100%;
+    margin-top: 39px;
+    -moz-column-gap: 0px;
+         column-gap: 0px;
+    row-gap: 24px;
+  }
+  .container .wrapper .main .main__feedback__container .main__feedback .main__feedback__card {
+    width: 300px;
+  }
+  .container .wrapper .main .main__price {
+    width: 100%;
+    margin-top: 50px;
+  }
+  .container .wrapper .main .main__price .main__price__bg img {
+    width: 340px;
+    height: 270px;
+  }
+  .container .wrapper .main .main__price .main__price__title {
+    margin-top: 40px;
+  }
+  .container .wrapper .main .main__price .main__price__title p {
+    font-size: 22px;
+    line-height: 32px;
+  }
+  .container .wrapper .main .main__price .main__price__text {
+    width: 300px;
+  }
+  .container .wrapper .main .main__price .main__price__text p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .container .wrapper .main .main__price .main__price__container {
+    margin-top: 38px;
+  }
+  .container .wrapper .main .main__price .main__price__container .main__price__card {
+    width: 300px;
+    height: 90px;
+    gap: 0px;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  .container .wrapper .main .main__price .main__price__container .main__price__card .main__price__card__image {
+    margin-right: 40px;
+  }
+  .container .wrapper .main .main__price .main__price__container .main__price__card .main__price__card__image img {
+    width: 50px;
+  }
+  .container .wrapper .main .main__price .main__price__container .main__price__card .main__price__card__wrapper {
+    margin-left: 30px;
+    gap: 8px;
+    align-items: baseline;
+  }
+  .container .wrapper .main .main__price .main__price__container .main__price__card .main__price__card__wrapper .main__price__card__text p {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .container .wrapper .main .main__price .main__price__container .main__price__card .main__price__card__wrapper .main__price__card__price p {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .container .wrapper .footer {
+    margin-top: 0px;
+  }
+  .container .wrapper .footer .footer__container {
+    width: 100%;
   }
 }/*# sourceMappingURL=style.css.map */

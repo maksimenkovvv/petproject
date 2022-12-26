@@ -20,6 +20,48 @@
         <span></span>
         <span></span>
       </div>
+      <div class="modal__menu__container">
+        <div class="modal__menu__close-btn">
+          <img src="./img/menu_close.svg" alt="close" />
+        </div>
+        <div class="modal__menu">
+          <div class="modal__menu__content">
+            <div class="modal__menu__content__text">
+              <p>Обо мне</p>
+            </div>
+            <div class="modal__menu__content__text">
+              <p>Портфолио</p>
+            </div>
+            <div class="modal__menu__content__text">
+              <p>Отзывы</p>
+            </div>
+            <div class="modal__menu__content__text">
+              <p>Стоимость</p>
+            </div>
+            <div class="modal__menu__content__media">
+              <img
+                src="./img/instagram.svg"
+                alt="instagram"
+                class="modal__menu__content__media__image"
+              />
+              <img
+                src="./img/vk.svg"
+                alt="vk"
+                class="modal__menu__content__media__image"
+              />
+              <img
+                src="./img/telegram.svg"
+                alt="telegram"
+                class="modal__menu__content__media__image"
+              />
+            </div>
+            <div class="modal__menu__content__button">
+              <a href="#">записаться</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="background">
         <img src="./img/bg-image.png" alt="bg" class="backround__image" />
       </div>
@@ -338,44 +380,52 @@
                 <div class="main__price__card__image">
                   <img src="./img/card_price-1.svg" alt="card-image" />
                 </div>
-                <div class="main__price__card__text">
-                  <p>Съемка портретов</p>
-                </div>
-                <div class="main__price__card__price">
-                  <p>50 000 ₽</p>
+                <div class="main__price__card__wrapper">
+                  <div class="main__price__card__text">
+                    <p>Съемка портретов</p>
+                  </div>
+                  <div class="main__price__card__price">
+                    <p>50 000 ₽</p>
+                  </div>
                 </div>
               </div>
               <div class="main__price__card">
                 <div class="main__price__card__image">
                   <img src="./img/card_price-2.svg" alt="card-image" />
                 </div>
-                <div class="main__price__card__text">
-                  <p>аренда студии</p>
-                </div>
-                <div class="main__price__card__price">
-                  <p>1 000 ₽ /час</p>
+                <div class="main__price__card__wrapper">
+                  <div class="main__price__card__text">
+                    <p>аренда студии</p>
+                  </div>
+                  <div class="main__price__card__price">
+                    <p>1 000 ₽ /час</p>
+                  </div>
                 </div>
               </div>
               <div class="main__price__card">
                 <div class="main__price__card__image">
                   <img src="./img/card_price-3.svg" alt="card-image" />
                 </div>
-                <div class="main__price__card__text">
-                  <p>Макияж, прическа</p>
-                </div>
-                <div class="main__price__card__price">
-                  <p>5 000 ₽</p>
+                <div class="main__price__card__wrapper">
+                  <div class="main__price__card__text">
+                    <p>Макияж, прическа</p>
+                  </div>
+                  <div class="main__price__card__price">
+                    <p>5 000 ₽</p>
+                  </div>
                 </div>
               </div>
               <div class="main__price__card">
                 <div class="main__price__card__image">
                   <img src="./img/card_price-4.svg" alt="card-image" />
                 </div>
-                <div class="main__price__card__text">
-                  <p>аренда одежды</p>
-                </div>
-                <div class="main__price__card__price">
-                  <p>10 000 ₽</p>
+                <div class="main__price__card__wrapper">
+                  <div class="main__price__card__text">
+                    <p>аренда одежды</p>
+                  </div>
+                  <div class="main__price__card__price">
+                    <p>10 000 ₽</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -395,8 +445,7 @@
           </div>
         </div>
       </div>
+      <script src="./index.js"></script>
     </div>
-    <!-- <script src="./masonry.pkgd.min.js"></script>
-    <script src="./index.js"></script> -->
   </body>
 </html>

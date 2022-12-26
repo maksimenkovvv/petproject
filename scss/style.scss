@@ -39,6 +39,10 @@
     opacity: 0.5;
   }
 
+  .modal__menu__container {
+    display: none;
+  }
+
   .background {
     position: absolute;
     z-index: -1;
@@ -396,23 +400,30 @@
             gap: 28px;
             background: #ffffff;
 
-            .main__price__card__text p {
-              font-family: "Montserrat";
-              font-style: normal;
-              font-weight: 600;
-              font-size: 14px;
-              line-height: 22px;
-              letter-spacing: 0.1em;
-              text-transform: uppercase;
-            }
+            .main__price__card__wrapper {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              gap: 27px;
+              .main__price__card__text p {
+                font-family: "Montserrat";
+                font-style: normal;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 22px;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+              }
 
-            .main__price__card__price p {
-              font-family: "Prata";
-              font-style: normal;
-              font-weight: 400;
-              font-size: 24px;
-              line-height: 32px;
-              letter-spacing: 0.02em;
+              .main__price__card__price p {
+                font-family: "Prata";
+                font-style: normal;
+                font-weight: 400;
+                font-size: 24px;
+                line-height: 32px;
+                letter-spacing: 0.02em;
+              }
             }
           }
         }
@@ -458,6 +469,99 @@
       margin: 34px 0px 0px 30px;
     }
 
+    .modal__menu__container {
+      transform: translateX(-100%);
+      display: block;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background-color: #ffffff;
+      transition: transform 0.5s;
+
+      .modal__menu__close-btn {
+        position: absolute;
+        right: 0;
+        margin: 10px 10px 0px 0px;
+      }
+
+      .modal__menu {
+        margin-top: 80px;
+        display: flex;
+        justify-content: center;
+
+        .modal__menu__content {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          text-align: center;
+          gap: 30px;
+
+          .modal__menu__content__text p {
+            font-family: "Montserrat";
+            font-style: normal;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 20px;
+            color: #000000;
+          }
+
+          .modal__menu__content__media {
+            display: flex;
+            justify-content: center;
+            margin-top: 73px;
+            gap: 30px;
+
+            .modal__menu__content__media__image {
+              width: 28px;
+              cursor: pointer;
+              transition: opacity 0.2s ease-out;
+            }
+
+            .modal__menu__content__media__image:hover {
+              opacity: 0.5;
+            }
+          }
+
+          .modal__menu__content__button {
+            margin-top: 51px;
+            width: 220px;
+            height: 60px;
+            background-color: #222222;
+            text-align: center;
+            line-height: 60px;
+            cursor: pointer;
+
+            a {
+              text-decoration: none;
+              font-family: "Montserrat";
+              font-style: normal;
+              font-weight: 600;
+              font-size: 14px;
+              line-height: 17px;
+              letter-spacing: 0.15em;
+              text-transform: uppercase;
+              color: #ffffff;
+            }
+          }
+
+          .modal__menu__content__button:hover {
+            box-sizing: border-box;
+            border: 1px solid #222222;
+            background-color: #f4f4f4;
+            line-height: 58px;
+
+            a {
+              color: #222222;
+            }
+          }
+        }
+      }
+    }
+
+    .modal__menu__container.active {
+      transform: translateX(0%);
+    }
+
     .background {
       display: none;
     }
@@ -468,10 +572,15 @@
 
       .header {
         height: 1140px;
+
         .header__heading {
           width: 100%;
           display: flex;
           justify-content: center;
+
+          .header__heading__logo img {
+            width: 60px;
+          }
 
           .header__heading__media {
             display: none;
@@ -561,6 +670,7 @@
           }
 
           .main__career__card__container {
+            margin-top: 50px;
             flex-wrap: wrap;
             gap: 60px;
 
@@ -626,6 +736,12 @@
             .main__feedback__card {
               width: 300px;
 
+              .main__feedback__card__uphead {
+                .main__feedback__card__uphead__photo img {
+                  width: 50px;
+                }
+              }
+
               .main__feedback__card__subhead p {
                 font-size: 14px;
                 line-height: 22px;
@@ -675,7 +791,7 @@
         }
       }
       .footer {
-        margin-top: 83px;
+        margin-top: 50px;
         flex-direction: column;
         justify-content: center;
         gap: 10px;
@@ -685,6 +801,270 @@
           justify-content: center;
           align-items: center;
           gap: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 340px) {
+  .container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .menu__button {
+      margin: 24px 0px 0px 20px;
+    }
+
+    .wrapper {
+      width: 100%;
+      margin-top: 19px;
+
+      .header {
+        height: calc(690px - 19px);
+
+        .header__info {
+          width: 100%;
+          margin-top: 38px;
+
+          .header__info__name {
+            width: 300px;
+            text-align: center;
+
+            .header__info__name__text {
+              font-size: 16px;
+              line-height: 24px;
+            }
+          }
+
+          .header__info__title {
+            margin-top: 12px;
+
+            .header__info__title__text__uphead {
+              letter-spacing: 0.3em;
+              font-size: 30px;
+              line-height: 30px;
+            }
+
+            .header__info__title__text__subhead {
+              letter-spacing: 0.3em;
+              font-size: 30px;
+              line-height: 30px;
+            }
+
+            .header__info__title__text__subhead span {
+              font-size: 14px;
+              line-height: 20px;
+            }
+          }
+
+          .header__info__about {
+            margin-top: 20px;
+            width: 300px;
+
+            .header__info__about__text {
+              font-size: 14px;
+              line-height: 22px;
+            }
+          }
+
+          .header__info__button {
+            margin-top: 25px;
+            line-height: 50px;
+            height: 50px;
+          }
+
+          .header__info__button a {
+            font-size: 12px;
+            line-height: 15px;
+          }
+        }
+
+        .background__media {
+          margin-top: 40px;
+          width: 100%;
+        }
+
+        .background__media img {
+          width: 100%;
+          height: 320px;
+        }
+      }
+      .main {
+        margin-top: 50px;
+
+        .main__title {
+          .main__title__text {
+            max-width: 300px;
+          }
+
+          .main__title__text p {
+            font-size: 14px;
+            line-height: 22px;
+          }
+        }
+        .main__career {
+          width: 100%;
+          margin-top: 44px;
+
+          .main__career__image img {
+            width: 100%;
+            height: 140px;
+          }
+
+          .main__career__card__container {
+            margin-top: 34px;
+            gap: 25px 20px;
+
+            .main__career__card {
+              width: 140px;
+
+              .main__career__card__digit p {
+                font-size: 34px;
+                line-height: 40px;
+              }
+
+              .main__career__card__text p {
+                font-size: 12px;
+                line-height: 18px;
+              }
+            }
+          }
+        }
+        .main__portfolio {
+          width: 100%;
+          margin-top: 50px;
+
+          .main__portfolio__title p {
+            font-size: 22px;
+            line-height: 32px;
+          }
+
+          .main__portfolio__image__container {
+            margin-top: 31px;
+            grid-template-columns: 340px;
+            grid-gap: 2px;
+
+            .card-1 img,
+            .card-4 img,
+            .card-5 img,
+            .card-8 img,
+            .card-1,
+            .card-4,
+            .card-5,
+            .card-8 {
+              width: 340px;
+              height: 235px;
+            }
+
+            .card-2 img,
+            .card-3 img,
+            .card-6 img,
+            .card-7 img,
+            .card-2,
+            .card-3,
+            .card-6,
+            .card-7 {
+              width: 340px;
+              height: 360px;
+            }
+
+            .main__portfolio__image__card:nth-of-type(3),
+            .main__portfolio__image__card:nth-of-type(7) {
+              margin-top: 0px;
+            }
+          }
+        }
+        .main__feedback__container {
+          width: 100%;
+          margin-top: 50px;
+
+          .main__feedback__title p {
+            font-size: 22px;
+            line-height: 32px;
+          }
+
+          .main__feedback {
+            width: 100%;
+            margin-top: 39px;
+            column-gap: 0px;
+            row-gap: 24px;
+
+            .main__feedback__card {
+              width: 300px;
+            }
+          }
+        }
+        .main__price {
+          width: 100%;
+          margin-top: 50px;
+
+          .main__price__bg img {
+            width: 340px;
+            height: 270px;
+          }
+
+          .main__price__title {
+            margin-top: 40px;
+          }
+
+          .main__price__title p {
+            font-size: 22px;
+            line-height: 32px;
+          }
+
+          .main__price__text {
+            width: 300px;
+          }
+
+          .main__price__text p {
+            font-size: 14px;
+            line-height: 22px;
+          }
+
+          .main__price__container {
+            margin-top: 38px;
+
+            .main__price__card {
+              width: 300px;
+              height: 90px;
+              gap: 0px;
+              flex-direction: row-reverse;
+              justify-content: space-between;
+
+              .main__price__card__image {
+                margin-right: 40px;
+              }
+
+              .main__price__card__image img {
+                width: 50px;
+              }
+
+              .main__price__card__wrapper {
+                margin-left: 30px;
+                gap: 8px;
+                align-items: baseline;
+
+                .main__price__card__text p {
+                  font-size: 12px;
+                  line-height: 18px;
+                }
+
+                .main__price__card__price p {
+                  font-size: 18px;
+                  line-height: 24px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .footer {
+        margin-top: 0px;
+
+        .footer__container {
+          width: 100%;
         }
       }
     }
